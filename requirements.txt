@@ -1,8 +1,5 @@
 streamlit
-requests
 streamlit-extras
-groq
-dotenv
-resend
-os
 pandas
+requests
+resend
