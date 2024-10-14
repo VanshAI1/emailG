@@ -12,9 +12,6 @@ except ImportError:
     st.error("Resend library is not installed. Please install it using 'pip install resend'")
     st.info("You can still use the email generator, but sending emails will be disabled.")
 
-if not DOTENV_INSTALLED:
-    st.stop()
-
 # Load environment variables
 GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 RESEND_API_KEY = st.secrets.get("RESEND_API_KEY", None)
