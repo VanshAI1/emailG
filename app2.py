@@ -5,13 +5,6 @@ import pandas as pd
 
 # Check for required libraries
 try:
-    import dotenv
-    DOTENV_INSTALLED = True
-except ImportError:
-    DOTENV_INSTALLED = False
-    st.error("python-dotenv library is not installed. Please install it using 'pip install python-dotenv'")
-
-try:
     import resend
     RESEND_INSTALLED = True
 except ImportError:
@@ -23,10 +16,8 @@ if not DOTENV_INSTALLED:
     st.stop()
 
 # Load environment variables
-dotenv.load_dotenv()
-
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+RESEND_API_KEY = st.secrets.get("RESEND_API_KEY", None)
 
 # Check if API keys are set
 if not GROQ_API_KEY:
