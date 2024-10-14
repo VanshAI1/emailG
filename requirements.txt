@@ -1,0 +1,7 @@
+streamlit
+groq
+dotenv
+resend
+os
+pandas
+requests
